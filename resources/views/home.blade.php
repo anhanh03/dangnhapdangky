@@ -26,6 +26,9 @@
                             <button style="margin-top: 5px;" type="submit" class="btn btn-primary">Add</button>
                         </form>
 
+                        <!-- Thêm nút xuất Excel -->
+                        <a href="{{ route('todos.export') }}" class="btn btn-success mt-3">Xuất Excel</a>
+
                         <ul class="list-group mt-3">
                             @foreach ($todos as $todo)
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -74,6 +77,17 @@
                 alert(response)
             });
         });
+
+        // function showMessage(message, isError = false) {
+        //     statusMessage.textContent = message;
+        //     statusMessage.className = isError ? 'alert alert-danger' : 'alert alert-success';
+        //     statusMessage.style.display = 'block';
+
+        //     // Ẩn thông báo sau 3 giây
+        //     setTimeout(() => {
+        //         statusMessage.style.display = 'none';
+        //     }, 3000);
+        // }
     </script>
 @endsection
 

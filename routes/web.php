@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use  Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\TodoController;
+use App\Http\Middleware\ThrottleTodoCreation;
 
 // Route::get('/', function () {
 //     return view('home');
@@ -24,7 +25,9 @@ Route::get('/home', [App\Http\Controllers\TodoController::class, 'index'])->name
 
 
 Route::get('/dashboard', [TodoController::class, 'index'])->name('dashboard')->middleware(['auth']);
-Route::post('/todos', [TodoController::class, 'store'])->name('todos.store')->middleware(['auth']);
+Route::post('/todos', [App\Http\Controllers\TodoController::class, 'store'])
+    ->name('todos.store')
+    ->middleware(ThrottleTodoCreation::class);
 
 // Route cho action sửa
 Route::get('/todos/{id}/edit', [TodoController::class, 'edit'])->name('todos.edit');
@@ -36,3 +39,5 @@ Route::put('/todos/{id}', [TodoController::class, 'update'])->name('todos.update
 Route::delete('/todos/{id}', [TodoController::class, 'destroy'])->name('todos.destroy');
 
 Route::put('/todos/{id}', [TodoController::class, 'updateCheck'])->name('todos.updateCheck');
+
+Route::get('/export', [TodoController::class, 'export'])->name('todos.export');

@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\TodosExport;
 
 class TodoController extends Controller
 {
@@ -80,5 +82,9 @@ class TodoController extends Controller
         return response()->json(['message' => 'Todo updated successfully!']);
     }
 
+    public function export() 
+    {
+        return Excel::download(new TodosExport, 'todos.xlsx');
+    }
 }
 
