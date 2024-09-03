@@ -10,7 +10,7 @@
 
 1. **Clone dự án**
     ```bash
-    git clone https://github.com/anhanh03/dangnhapdangky.git
+    git clone [https://github.com/anhanh03/dangnhapdangky](https://github.com/anhanh03/todo_list).git
     ```
 2. **Cài đặt dependencies PHP**
     ```bash
