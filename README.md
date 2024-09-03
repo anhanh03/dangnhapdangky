@@ -47,6 +47,7 @@
 - ⏱️ Giới hạn tạo todo (3 giây/lần)
 
 ## Cấu trúc dự án
+```bash
 todo-list/
 ├── 📂 app/
 │   ├── 📂 Http/
@@ -62,6 +63,7 @@ todo-list/
 ├── 📂 routes/
 │   └── 📄 web.php
 └── 📄 .env
+```
 ## Hỗ trợ
 Nếu bạn gặp bất kỳ vấn đề nào trong quá trình thiết lập hoặc chạy ứng dụng, vui lòng tạo issue trên GitHub hoặc liên hệ với chúng tôi qua email [anhanhvodoi03@gmail.com](mailto:anhanhvodoi03@gmail.com).
 
